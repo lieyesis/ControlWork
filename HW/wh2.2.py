@@ -1,17 +1,20 @@
 from main import Hero
 
 class MyHero(Hero):
-    def __init__(self, name, health, power, skill_points):
-        super().__init__(name, health, power)
-        self.skill_points = skill_points
-
-    def unique_skill(self):
-        if self.skill_points > 0:
-            print(f"{self.name} uses a unique skill! Skill points left: {self.skill_points - 1}")
-            self.skill_points -= 1
+    def __init__(self, name, health, power, skill_power):
+        super().init(name, health, power)
+        self.skill_power = skill_power
+    def special_skill(self):
+        if self.skill_power > 0:
+            print(f'{self.name} использует особое умение')
+            self.skill_power -= 1
         else:
-            print(f"{self.name} has no skill points left to use the unique skill.")
-
+            print(f'{self.name} не осталось сил для использования умения.')
     def action(self):
         super().action()
-        self.unique_skill()
+        self.special_skill()
+if __name__ == '__main__':
+    hero = MyHero(name='Garganchila', health=100, power=50, skill_power=5)
+    hero.action()
+    print(f'Текущее здоровье: {hero.health}')
+    print(f'Оставшаяся сила способности: {hero.skill_power}')
