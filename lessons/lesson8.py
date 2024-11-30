@@ -79,9 +79,9 @@ def get_user_with_grades():
     cursor =  connect.cursor()
 
     cursor.execute('''
-        SELECT users.fio, users.age, grades.subject, grades.grade
+        SELECT *
         FROM users
-        LEFT JOIN grades ON users.userid = grades.userid 
+        INNER JOIN grades ON users.userid = grades.userid 
     ''')
 
     rows = cursor.fetchall()
