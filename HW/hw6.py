@@ -12,3 +12,8 @@ def binary_search(arr, target):
             high = mid - 1
 
     return -1
+
+# Привязать локальный проект к удалённому репозиторию
+git remote add origin <https://github.com/lieyesis/-.git>
+
+# Пример: git remote add origin https://github.com/username/my-new-repo.git
